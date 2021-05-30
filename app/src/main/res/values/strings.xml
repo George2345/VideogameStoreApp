@@ -9,4 +9,6 @@
     <string name="nd_supportTitle">Soporte</string>
     <string name="nd_contact">Contact</string>
     <string name="nd_help">Help</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
