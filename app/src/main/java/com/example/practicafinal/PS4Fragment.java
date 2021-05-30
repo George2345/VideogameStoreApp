@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 
 import androidx.cursoradapter.widget.SimpleCursorAdapter;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
@@ -43,7 +42,7 @@ public class PS4Fragment extends ListFragment {
                 0);
         setListAdapter(listAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_p_s4, container, false);
+        return inflater.inflate(R.layout.fragment_ps4, container, false);
     }
 
     @Override
