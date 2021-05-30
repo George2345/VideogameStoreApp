@@ -80,12 +80,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         switch (id)
         {
-            /*case R.id.navigation_home :
+            case R.id.navigation_home:
                 break;
-            case R.id.navigation_games :
-                Intent intent = new Intent(this, MainActivity.class);
+            case R.id.navigation_novedades:
+                Intent intent = new Intent(this, SectionActivity.class);
                 startActivity(intent);
-                break;*/
+                break;
+            case R.id.navigation_ofertas:
+                /*Intent intent = new Intent(this, SectionActivity.class);
+                startActivity(intent);*/
+                break;
+            case R.id.navigation_ps4:
+                /*Intent intent = new Intent(this, SectionActivity.class);
+                startActivity(intent);*/
+                break;
+            case R.id.navigation_xbox:
+                /*Intent intent = new Intent(this, SectionActivity.class);
+                startActivity(intent);*/
+                break;
         }
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         drawerLayout.closeDrawer(GravityCompat.START);

@@ -31,6 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        app:headerLayout="@layout/navigationdrawer_section"
         app:menu="@menu/navigationdrawer_menu">
     </com.google.android.material.navigation.NavigationView >
 </androidx.drawerlayout.widget.DrawerLayout>

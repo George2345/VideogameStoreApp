@@ -69,7 +69,7 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
     {
         int id = menuItem.getItemId();
-        /*switch (id)
+        switch (id)
         {
             case R.id.navigation_novedades :
                 Log.d("MENUNAVIGATIONDRAWER", "Novedades");
@@ -91,7 +91,7 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
                 m_pager.setCurrentItem(2);
                 m_adapter.notifyDataSetChanged();
                 break;
-        }*/
+        }
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

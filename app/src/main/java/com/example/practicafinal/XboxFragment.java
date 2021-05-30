@@ -19,9 +19,9 @@ public class XboxFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(inflater.getContext(),
+        /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(inflater.getContext(),
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.xboxgames));
-        setListAdapter(adapter);
+        setListAdapter(adapter);*/
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_xbox, container, false);
     }

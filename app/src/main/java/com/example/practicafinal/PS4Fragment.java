@@ -35,7 +35,7 @@ public class PS4Fragment extends ListFragment {
                 null, null, null);
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
-                android.R.layout.simple_list_item_1,
+                R.layout.item_section_list,
                 cursor,
                 new String[]{"NAME"},
                 new int[] {android.R.id.text1},

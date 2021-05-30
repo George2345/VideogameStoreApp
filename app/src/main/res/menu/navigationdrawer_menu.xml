@@ -3,7 +3,7 @@
         <item
             android:id="@+id/navigation_home"
             android:icon="@android:drawable/ic_menu_edit"
-            android:title="@string/nd_home"
+            android:title="@string/home_tab"
             android:checked="true"/>
         <item
             android:id="@+id/navigation_novedades"
@@ -11,28 +11,38 @@
             android:title="@string/novedades_tab"
             />
         <item
-            android:id="@+id/navigation_games"
+            android:id="@+id/navigation_ofertas"
             android:icon="@android:drawable/ic_menu_gallery"
-            android:title="@string/nd_games"
+            android:title="@string/ofertas_tab"
             />
         <item
-            android:id="@+id/navigation_merchandising"
+            android:id="@+id/navigation_ps4"
             android:icon="@android:drawable/ic_menu_gallery"
-            android:title="@string/nd_merchandising"
+            android:title="@string/ps4_tab"
+            />
+        <item
+            android:id="@+id/navigation_xbox"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="@string/xbox_tab"
+            />
+        <item
+            android:id="@+id/navigation_location"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="@string/location_tab"
             />
 
     </group>
-    <item android:title="@string/nd_supportTitle">
+    <item android:title="@string/supportTitle_tab">
         <menu>
             <item
                 android:id="@+id/navigation_contact"
                 android:icon="@android:drawable/sym_action_email"
-                android:title="@string/nd_contact"
+                android:title="@string/contact_tab"
                 />
             <item
                 android:id="@+id/navigation_help"
                 android:icon="@android:drawable/ic_menu_help"
-                android:title="@string/nd_help"
+                android:title="@string/carrito_tab"
                 />
         </menu>
     </item>

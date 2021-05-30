@@ -22,12 +22,10 @@
     <ImageView
         android:id="@+id/gameImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        android:layout_height="wrap_content" />
     <CheckBox
         android:id="@+id/favoriteCheckbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Favorite"
-        android:onClick="favoriteOnClick"/>
+        android:text="Favorite" />
 </LinearLayout>
