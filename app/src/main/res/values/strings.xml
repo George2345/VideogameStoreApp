@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">PracticaFinal</string>
+    <string name="app_web">www.tiendavideojuegos.com</string>
+    <string name="nd_home">Inicio</string>
+    <string name="nd_calendar">Calendario Lanzamientos</string>
+    <string name="nd_new">Novedades</string>
+    <string name="nd_games">Juegos</string>
+    <string name="nd_merchandising">Merchandising</string>
+    <string name="nd_supportTitle">Soporte</string>
+    <string name="nd_contact">Contact</string>
+    <string name="nd_help">Help</string>
 </resources>

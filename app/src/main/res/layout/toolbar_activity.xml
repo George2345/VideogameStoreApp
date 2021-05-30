@@ -11,7 +11,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Toolbar Title"
+        android:text="GameShop"
+        android:textSize="30dp"
+        android:textStyle="bold"
         android:layout_gravity="center"
         android:id="@+id/toolbar_title" />
 

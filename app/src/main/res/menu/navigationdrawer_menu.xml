@@ -1,0 +1,44 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_home"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/nd_home"
+            android:checked="true"/>
+        <item
+            android:id="@+id/navigation_calendar"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="@string/nd_calendar"
+            />
+        <item
+            android:id="@+id/navigation_novedades"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="@string/nd_new"
+            />
+        <item
+            android:id="@+id/navigation_games"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="@string/nd_games"
+            />
+        <item
+            android:id="@+id/navigation_merchandising"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="@string/nd_merchandising"
+            />
+
+    </group>
+    <item android:title="@string/nd_supportTitle">
+        <menu>
+            <item
+                android:id="@+id/navigation_contact"
+                android:icon="@android:drawable/sym_action_email"
+                android:title="@string/nd_contact"
+                />
+            <item
+                android:id="@+id/navigation_help"
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="@string/nd_help"
+                />
+        </menu>
+    </item>
+</menu>
