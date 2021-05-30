@@ -6,14 +6,9 @@
             android:title="@string/nd_home"
             android:checked="true"/>
         <item
-            android:id="@+id/navigation_calendar"
-            android:icon="@android:drawable/ic_menu_my_calendar"
-            android:title="@string/nd_calendar"
-            />
-        <item
             android:id="@+id/navigation_novedades"
             android:icon="@android:drawable/ic_menu_gallery"
-            android:title="@string/nd_new"
+            android:title="@string/novedades_tab"
             />
         <item
             android:id="@+id/navigation_games"

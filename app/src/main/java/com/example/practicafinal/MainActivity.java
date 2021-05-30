@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setHomeButtonEnabled(true);
 
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
