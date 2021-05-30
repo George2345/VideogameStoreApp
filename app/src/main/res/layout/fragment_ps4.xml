@@ -4,8 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PS4Fragment">
+
     <ListView
-        android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:id="@android:id/list"
+        >
+
+
+    </ListView>
+
+
 </FrameLayout>

@@ -28,14 +28,16 @@ public class PS4Fragment extends ListFragment {
         setListAdapter(adapter);*/
         SQLiteOpenHelper gameDbHelper = new GameDataHelper(getContext()) ;
         SQLiteDatabase db = gameDbHelper.getReadableDatabase();
+        //String[] args = new String[] {"usu1"};
+        //Cursor cursor = db.rawQuery(" SELECT _id, NAME, PRICE FROM GAMES WHERE PLATFORM='PS4'", args);
         Cursor cursor = db.query("GAMES",
-                new String[] {"_id", "NAME"},
+                new String[] {"_id", "NAME", "PRICE"},
                 null,
                 null,
                 null, null, null);
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
-                R.layout.item_section_list,
+                android.R.layout.simple_list_item_1,
                 cursor,
                 new String[]{"NAME"},
                 new int[] {android.R.id.text1},

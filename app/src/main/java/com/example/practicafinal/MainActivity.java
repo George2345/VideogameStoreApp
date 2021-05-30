@@ -78,25 +78,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
+        Intent intent = new Intent(this, SectionActivity.class);
         switch (id)
         {
             case R.id.navigation_home:
                 break;
             case R.id.navigation_novedades:
-                Intent intent = new Intent(this, SectionActivity.class);
+                intent.putExtra("SECTION_ID", 0);
                 startActivity(intent);
                 break;
             case R.id.navigation_ofertas:
-                /*Intent intent = new Intent(this, SectionActivity.class);
-                startActivity(intent);*/
+                intent.putExtra("SECTION_ID", 1);
+                startActivity(intent);
                 break;
             case R.id.navigation_ps4:
-                /*Intent intent = new Intent(this, SectionActivity.class);
-                startActivity(intent);*/
+                intent.putExtra("SECTION_ID", 2);
+                startActivity(intent);
                 break;
             case R.id.navigation_xbox:
-                /*Intent intent = new Intent(this, SectionActivity.class);
-                startActivity(intent);*/
+                intent.putExtra("SECTION_ID", 3);
+                startActivity(intent);
                 break;
         }
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
