@@ -11,12 +11,12 @@ public class CategoriesAdapter extends FragmentPagerAdapter {
 
     Context m_context;
 
-    public CategoriesAdapter(FragmentManager fm)
+    public CategoriesAdapter(@NonNull FragmentManager fm)
     {
         super(fm);
     }
 
-    public CategoriesAdapter(FragmentManager fm, Context context) {
+    public CategoriesAdapter(@NonNull FragmentManager fm, Context context) {
         super(fm);
         m_context = context;
     }
