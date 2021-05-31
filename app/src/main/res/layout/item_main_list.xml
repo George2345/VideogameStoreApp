@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/textViewTitulo"
+        android:id="@+id/textViewTituloMain"
         android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -21,7 +21,7 @@
         android:layout_marginLeft="20dp"/>
 
     <TextView
-        android:id="@+id/textViewPrecio"
+        android:id="@+id/textViewPrecioMain"
         android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
