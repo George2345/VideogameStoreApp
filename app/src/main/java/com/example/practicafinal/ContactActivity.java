@@ -120,17 +120,21 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
+        Intent intent = null;
 
         // Check which radio button was clicked
         switch(view.getId()) {
             case R.id.radio_contactar:
                 if (checked)
                     // Pirates are the best
+                    //intent = new Intent(this, MainActivity.class);
                     break;
             case R.id.radio_reclamacion:
                 if (checked)
                     // Ninjas rule
+                    //intent = new Intent(this, SectionActivity.class);
                     break;
         }
+        startActivity(intent);
     }
 }
