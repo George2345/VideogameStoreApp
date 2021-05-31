@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.cursoradapter.widget.SimpleCursorAdapter;
@@ -13,6 +14,7 @@ import androidx.fragment.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 
@@ -45,10 +47,10 @@ public class ShoppingCartFragment extends ListFragment {
                 0);
 
         setListAdapter(listAdapter);
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_shopping_cart, container, false);
     }
+
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id)

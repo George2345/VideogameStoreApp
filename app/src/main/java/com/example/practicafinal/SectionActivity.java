@@ -7,7 +7,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
@@ -64,7 +67,6 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
         //NavigationView
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
-
 
     }
 
@@ -145,8 +147,8 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
         return true;
     }
 
-    public void imageButtonCart(View v){
-        Toast.makeText(SectionActivity.this, "Añadido a carrito", Toast.LENGTH_SHORT).show();
-    }
 
+    public void addItemFromSection(View v){
+
+    }
 }

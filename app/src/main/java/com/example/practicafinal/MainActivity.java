@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.LocaleList;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -104,8 +105,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 break;
             case R.id.navigation_carrito:
+                Intent intentShopCart = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intentShopCart);
                 break;
             case R.id.navigation_location:
+                Intent intentLocation = new Intent(this, LocationActivity.class);
+                startActivity(intentLocation);
                 break;
             case R.id.navigation_contact:
                 Intent intent_contact = new Intent(this, ContactActivity.class);

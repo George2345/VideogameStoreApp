@@ -51,7 +51,9 @@
         android:layout_weight="1"
         android:background="#FFFFFF"
         app:srcCompat="@mipmap/ic_deletesmall_foreground"
-        android:onClick="imageButtonCart"
+        android:onClick="deleteItem"
 
         />
+
+
 </LinearLayout>

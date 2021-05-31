@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -55,23 +56,6 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected (MenuItem item)
-    {
-        /*switch (item.getItemId())
-        {
-            case :
-
-                return true;
-        }*/
-        return false;
-    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -101,5 +85,10 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    //Metodo para el boton de eliminar un articulo de la lista
+    public void deleteItem(View v){
+
     }
 }
