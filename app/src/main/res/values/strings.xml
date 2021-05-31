@@ -11,23 +11,6 @@
     <string name="carrito_tab">Carrito</string>
     <string name="app_web">www.tiendavideojuegos.com</string>
 
-
-    <string-array name="ps4games">
-        <item>NinoKuni II</item>
-        <item>Shenmue</item>
-        <item>Outcast</item>
-    </string-array>
-    <string-array name="xboxgames">
-        <item>Halo</item>
-        <item>Forza 4</item>
-        <item>Sonic Mania</item>
-    </string-array>
-    <string-array name="ofertas">
-        <item>God Of War</item>
-        <item>Forza 3</item>
-        <item>Spyro</item>
-    </string-array>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

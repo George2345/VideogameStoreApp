@@ -131,6 +131,14 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
                 m_pager.setCurrentItem(3);
                 m_adapter.notifyDataSetChanged();
                 break;
+            case R.id.navigation_carrito:
+                break;
+            case R.id.navigation_location:
+                break;
+            case R.id.navigation_contact:
+                Intent intent_contact = new Intent(this, ContactActivity.class);
+                startActivity(intent_contact);
+                break;
         }
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         drawerLayout.closeDrawer(GravityCompat.START);

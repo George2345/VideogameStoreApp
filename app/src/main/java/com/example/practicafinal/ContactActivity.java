@@ -11,18 +11,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.RadioButton;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ContactActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_contact);
 
         //Toolbar
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
@@ -86,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (id)
         {
             case R.id.navigation_home:
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
                 break;
             case R.id.navigation_novedades:
                 intent.putExtra("SECTION_ID", 0);
@@ -117,4 +117,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radio_contactar:
+                if (checked)
+                    // Pirates are the best
+                    break;
+            case R.id.radio_reclamacion:
+                if (checked)
+                    // Ninjas rule
+                    break;
+        }
+    }
 }

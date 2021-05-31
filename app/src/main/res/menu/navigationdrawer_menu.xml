@@ -26,23 +26,23 @@
             android:title="@string/xbox_tab"
             />
         <item
-            android:id="@+id/navigation_location"
-            android:icon="@android:drawable/ic_menu_gallery"
-            android:title="@string/location_tab"
+            android:id="@+id/navigation_carrito"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="@string/carrito_tab"
             />
 
     </group>
     <item android:title="@string/supportTitle_tab">
         <menu>
             <item
+                android:id="@+id/navigation_location"
+                android:icon="@android:drawable/ic_menu_gallery"
+                android:title="@string/location_tab"
+                />
+            <item
                 android:id="@+id/navigation_contact"
                 android:icon="@android:drawable/sym_action_email"
                 android:title="@string/contact_tab"
-                />
-            <item
-                android:id="@+id/navigation_help"
-                android:icon="@android:drawable/ic_menu_help"
-                android:title="@string/carrito_tab"
                 />
         </menu>
     </item>

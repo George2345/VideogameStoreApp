@@ -24,7 +24,7 @@ public class GameDetail extends AppCompatActivity {
         try {
             SQLiteDatabase db = gameDbHelper.getReadableDatabase();
             Cursor cursor = db.query("GAMES",
-                    new String[]{"_id", "NAME", "DESCRIPTION", "IMAGE_ID", "PRICE"}, //"FAVORITE"
+                    new String[]{"_id", "NAME", "DESCRIPTION", "IMAGE_ID", "RELEASE_DATE"}, //"FAVORITE"
                     "_id = ?",
                     new String[]{Integer.toString(gameId)},
                     null, null, null);
