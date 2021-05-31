@@ -69,12 +69,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected (MenuItem item)
     {
-        /*switch (item.getItemId())
+        switch (item.getItemId())
         {
-            case :
-
+            case R.id.marketCart:
+                Intent intent = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intent);
                 return true;
-        }*/
+        }
         return false;
     }
 

@@ -1,5 +1,6 @@
 package com.example.practicafinal;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class XboxFragment extends ListFragment {
 
@@ -42,5 +44,27 @@ public class XboxFragment extends ListFragment {
         setListAdapter(listAdapter);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_xbox, container, false);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id)
+    {
+        Intent intent = new Intent(getActivity(), GameDetail.class);
+        SQLiteOpenHelper gameDbHelper = new GameDataHelper(getContext()) ;
+        try
+        {
+            SQLiteDatabase db = gameDbHelper.getReadableDatabase();
+            Cursor cursor = db.rawQuery(" SELECT _id FROM GAMES WHERE PLATFORM='Xbox'", null);
+            /*Cursor cursor = db.query("GAMES",
+                    new String[] {"_id"},
+                    null,
+                    null,
+                    null, null, null);*/
+            cursor.move(position+1);
+            intent.putExtra("GAMEID", cursor.getString(0));
+            startActivity(intent);
+        }
+        catch (Exception e) {
+        }
     }
 }

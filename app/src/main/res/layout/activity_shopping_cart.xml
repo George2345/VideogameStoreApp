@@ -6,26 +6,39 @@
     android:id="@+id/drawerlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ShoppingCartActivity">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:orientation="vertical">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar_activity"
-            />
-
-        <fragment
-            android:id="@+id/leagues_list_fragment"
-            android:name="com.example.practicafinal.ShoppingCartFragment"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_activity"
+                />
 
-    </LinearLayout>
+            <fragment
+                android:id="@+id/shopppingcart_fragment"
+                android:name="com.example.practicafinal.ShoppingCartFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:text="Finalizar compra"
+            android:textSize="20dp" />
+
+    </FrameLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationdrawer_view"
         android:layout_width="wrap_content"

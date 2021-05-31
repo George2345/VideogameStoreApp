@@ -77,12 +77,13 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
     @Override
     public boolean onOptionsItemSelected (MenuItem item)
     {
-        /*switch (item.getItemId())
+        switch (item.getItemId())
         {
-            case :
-
+            case R.id.marketCart:
+                Intent intent = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intent);
                 return true;
-        }*/
+        }
         return false;
     }
 

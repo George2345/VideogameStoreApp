@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="#FFFFFF"
-        app:srcCompat="@mipmap/ic_carrito_foreground"
+        app:srcCompat="@mipmap/ic_deletesmall_foreground"
         android:onClick="imageButtonCart"
 
         />

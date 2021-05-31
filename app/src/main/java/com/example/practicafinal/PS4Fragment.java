@@ -58,11 +58,12 @@ public class PS4Fragment extends ListFragment {
         try
         {
             SQLiteDatabase db = gameDbHelper.getReadableDatabase();
-            Cursor cursor = db.query("GAMES",
+            Cursor cursor = db.rawQuery(" SELECT _id FROM GAMES WHERE PLATFORM='PS4'", null);
+            /*Cursor cursor = db.query("GAMES",
                     new String[] {"_id"},
                     null,
                     null,
-                    null, null, null);
+                    null, null, null);*/
             cursor.move(position+1);
             intent.putExtra("GAMEID", cursor.getString(0));
             startActivity(intent);
