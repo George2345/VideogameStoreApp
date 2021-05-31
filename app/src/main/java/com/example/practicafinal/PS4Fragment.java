@@ -12,7 +12,9 @@ import androidx.fragment.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class PS4Fragment extends ListFragment {
 
@@ -43,6 +45,7 @@ public class PS4Fragment extends ListFragment {
                 0);
 
         setListAdapter(listAdapter);
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ps4, container, false);
     }

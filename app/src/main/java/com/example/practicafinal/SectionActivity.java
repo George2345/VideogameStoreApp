@@ -8,10 +8,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -60,6 +64,8 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
         //NavigationView
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -128,6 +134,10 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void imageButtonCart(View v){
+        Toast.makeText(SectionActivity.this, "Añadido a carrito", Toast.LENGTH_SHORT).show();
     }
 
 }

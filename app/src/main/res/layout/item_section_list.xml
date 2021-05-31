@@ -26,14 +26,14 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="NN.N€"
+        android:text="NN.N"
         android:textAlignment="textEnd"
         android:textSize="20dp"
         android:textStyle="bold"
         tools:ignore="RtlCompat" />
 
     <TextView
-        android:layout_width="0.5dp"
+        android:layout_width="0.1dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
@@ -43,15 +43,23 @@
         android:textStyle="bold"
         tools:ignore="RtlCompat" />
 
-    <ImageButton
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+    </TextView>
+
+    <!--<ImageButton
         android:id="@+id/imageButtonCart"
-        android:layout_width="20dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="#FFFFFF"
         app:srcCompat="@mipmap/ic_carrito_foreground"
-        android:layout_marginRight="20dp"
-        tools:ignore="VectorDrawableCompat" />
+        android:onClick="imageButtonCart"/>-->
+
+
 
 
 </LinearLayout>
