@@ -25,7 +25,12 @@
         </activity>
     </application>
 
-    <uses-feature android:name="android.hardware.camera"
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera2"
         android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-feature android:name="android.hardware.location.gps" />
+
+
 
 </manifest>
