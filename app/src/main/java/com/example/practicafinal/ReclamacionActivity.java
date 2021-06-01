@@ -10,23 +10,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class ContactActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    RadioGroup radioGroup;
-    RadioButton radioButton;
+public class ReclamacionActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
+        setContentView(R.layout.activity_reclamacion);
 
         //Toolbar
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
@@ -47,29 +39,6 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        RadioButton contactar = (RadioButton) findViewById(R.id.radio_contactar);
-        RadioButton reclamacion = (RadioButton) findViewById(R.id.radio_reclamacion);
-
-        Button buttonSiguiente = (Button) findViewById(R.id.button_radioGroup);
-        buttonSiguiente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(contactar.isChecked()) {
-                    Intent intent1 = new Intent(ContactActivity.this, ContactarActivity.class);
-                    startActivity(intent1);
-                }
-                else if(reclamacion.isChecked()) {
-                    Intent intent2 = new Intent(ContactActivity.this, ReclamacionActivity.class);
-                    startActivity(intent2);
-                }
-                else{
-                    Toast.makeText(ContactActivity.this, "Seleccione una opción.", Toast.LENGTH_LONG).show();
-                }
-
-            }
-        });
-
     }
 
     @Override
@@ -87,33 +56,12 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected (MenuItem item)
-    {
-        switch (item.getItemId())
-        {
-            case R.id.marketCart:
-                Intent intent = new Intent(this, ShoppingCartActivity.class);
-                startActivity(intent);
-                return true;
-        }
-        return false;
-    }
-
-    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         Intent intent = new Intent(this, SectionActivity.class);
         switch (id)
         {
             case R.id.navigation_home:
-                intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
                 break;
             case R.id.navigation_novedades:
                 intent.putExtra("SECTION_ID", 0);
@@ -132,8 +80,12 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
                 startActivity(intent);
                 break;
             case R.id.navigation_carrito:
+                Intent intentShopCart = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intentShopCart);
                 break;
             case R.id.navigation_location:
+                Intent intentLocation = new Intent(this, LocationActivity.class);
+                startActivity(intentLocation);
                 break;
             case R.id.navigation_contact:
                 Intent intent_contact = new Intent(this, ContactActivity.class);
@@ -144,5 +96,4 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

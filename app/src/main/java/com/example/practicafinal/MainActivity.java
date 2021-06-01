@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    //Icono del menú lateral izquierdo
     @Override
     public void onBackPressed() {
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
@@ -61,12 +62,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    //Icono de la derecha carrito
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_activity, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    //Darle funcionalidad al icono del carrito
     @Override
     public boolean onOptionsItemSelected (MenuItem item)
     {
@@ -80,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return false;
     }
 
+    //funcionalidad menú lateral izquierdo
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();

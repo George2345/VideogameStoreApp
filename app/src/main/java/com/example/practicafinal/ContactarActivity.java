@@ -12,21 +12,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
+import android.widget.EditText;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class ContactActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ContactarActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    RadioGroup radioGroup;
-    RadioButton radioButton;
+    private EditText nombre;
+    private EditText email;
+    private EditText consulta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
+        setContentView(R.layout.activity_contactar);
 
         //Toolbar
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
@@ -48,27 +47,34 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        RadioButton contactar = (RadioButton) findViewById(R.id.radio_contactar);
-        RadioButton reclamacion = (RadioButton) findViewById(R.id.radio_reclamacion);
+        nombre = findViewById(R.id.edit_text_nombre);
+        email = findViewById(R.id.edit_text_email);
+        consulta = findViewById(R.id.edit_text_consulta);
 
-        Button buttonSiguiente = (Button) findViewById(R.id.button_radioGroup);
-        buttonSiguiente.setOnClickListener(new View.OnClickListener() {
+        Button buttonEnviar = findViewById(R.id.button_enviar);
+        buttonEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(contactar.isChecked()) {
-                    Intent intent1 = new Intent(ContactActivity.this, ContactarActivity.class);
-                    startActivity(intent1);
-                }
-                else if(reclamacion.isChecked()) {
-                    Intent intent2 = new Intent(ContactActivity.this, ReclamacionActivity.class);
-                    startActivity(intent2);
-                }
-                else{
-                    Toast.makeText(ContactActivity.this, "Seleccione una opción.", Toast.LENGTH_LONG).show();
-                }
-
+                sendConsulta();
             }
         });
+
+    }
+
+    private void sendConsulta() {
+
+        String inputEmail = email.getText().toString();
+        String[] emails = inputEmail.split(",");
+        String inputNombre = nombre.getText().toString();
+        String inputConsulta = consulta.getText().toString();
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL, emails);
+        intent.putExtra(Intent.EXTRA_SUBJECT, inputNombre);
+        intent.putExtra(Intent.EXTRA_TEXT, inputConsulta);
+
+        intent.setType("message/rfc822");
+        startActivity(Intent.createChooser(intent, "Elige cómo enviarlo: "));
 
     }
 
@@ -112,8 +118,6 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
         switch (id)
         {
             case R.id.navigation_home:
-                intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
                 break;
             case R.id.navigation_novedades:
                 intent.putExtra("SECTION_ID", 0);
@@ -132,8 +136,12 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
                 startActivity(intent);
                 break;
             case R.id.navigation_carrito:
+                Intent intentShopCart = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intentShopCart);
                 break;
             case R.id.navigation_location:
+                Intent intentLocation = new Intent(this, LocationActivity.class);
+                startActivity(intentLocation);
                 break;
             case R.id.navigation_contact:
                 Intent intent_contact = new Intent(this, ContactActivity.class);
@@ -144,5 +152,4 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

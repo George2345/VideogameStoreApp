@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".ContactActivity">
+    tools:context=".ContactarActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,33 +20,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Seleccione una opción:" />
-
-        <RadioGroup
-            android:id="@+id/radio_contact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/radio_contactar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Contactar"/>
-
-            <RadioButton
-                android:id="@+id/radio_reclamacion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Reclamación de pedido"/>
-
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/button_radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Siguiente" />
+            android:text="Reclamar" />
 
     </LinearLayout>
 
@@ -61,4 +35,3 @@
     </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
-
