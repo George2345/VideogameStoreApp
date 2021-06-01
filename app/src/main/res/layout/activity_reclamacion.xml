@@ -17,10 +17,100 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar_activity" />
 
-        <TextView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Reclamar" />
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre: "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                <EditText
+                    android:id="@+id/edit_text_nombre2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailSubject"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email: "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                <EditText
+                    android:id="@+id/edit_text_email2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Id Factura: "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                <EditText
+                    android:id="@+id/edit_text_idFactura2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailSubject"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Motivo: "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                <EditText
+                    android:id="@+id/edit_text_motivo2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="4"
+                    android:gravity="start|top"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Imagen: "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                <Button
+                    android:id="@+id/button_camara"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Cámara"
+                    android:onClick="dispatchTakePictureIntent"/>
+
+                <Button
+                    android:id="@+id/button_galeria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Galería"
+                    android:onClick="dispatchOpenGalleryIntent"/>
+
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="530dp">
+
+                    <ImageView
+                        android:id="@+id/imagen_reclamacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
 
     </LinearLayout>
 

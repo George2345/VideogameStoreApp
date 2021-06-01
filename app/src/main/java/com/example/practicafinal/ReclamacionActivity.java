@@ -6,14 +6,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class ReclamacionActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private EditText nombre;
+    private EditText email;
+    private EditText motivo;
+    private EditText idFactura;
+    ImageView m_imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +52,55 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        m_imageView = findViewById(R.id.imagen_reclamacion);
+    }
+
+    static final  int REQUEST_IMAGE_CAPTURE = 1;
+    static final  int REQUEST_GALLERY = 2;
+
+    public void dispatchTakePictureIntent(View v) {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null)
+        {
+            try {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            } catch (ActivityNotFoundException e) {
+                // display error state to the user
+            }
+        }
+    }
+
+    public void dispatchOpenGalleryIntent(View v) {
+        Intent takePictureIntent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null)
+        {
+            try {
+                startActivityForResult(takePictureIntent, REQUEST_GALLERY);
+            } catch (ActivityNotFoundException e) {
+                // display error state to the user
+            }
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            m_imageView.setImageBitmap(imageBitmap);
+            m_imageView.setVisibility(View.VISIBLE);
+        }
+        else if (requestCode == REQUEST_GALLERY && resultCode == RESULT_OK)
+        {
+            Uri videoUri = data.getData();
+            m_imageView.setImageURI(videoUri);
+            m_imageView.setVisibility(View.VISIBLE);
+        }
+
     }
 
     @Override
@@ -55,6 +117,50 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
 
     }
 
+    //Icono de la derecha send reclamacion
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_reclamacion, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //Darle funcionalidad al icono del send reclamacion
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item)
+    {
+
+        switch (item.getItemId())
+        {
+            case R.id.sendReclamacion:
+                sendReclamacion();
+                return true;
+        }
+        return false;
+    }
+
+    private void sendReclamacion() {
+
+        nombre = findViewById(R.id.edit_text_nombre2);
+        email = findViewById(R.id.edit_text_email2);
+        idFactura = findViewById(R.id.edit_text_idFactura2);
+        motivo = findViewById(R.id.edit_text_motivo2);
+
+        String inputEmail = email.getText().toString();
+        String[] emails = inputEmail.split(",");
+        String inputNombre = nombre.getText().toString();
+        String inputIdFactura = idFactura.getText().toString();
+        String inputMotivo = motivo.getText().toString();
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL, emails);
+        intent.putExtra(Intent.EXTRA_SUBJECT, inputIdFactura);
+        intent.putExtra(Intent.EXTRA_TEXT, inputNombre + "\n \n" + inputMotivo);
+
+        intent.setType("message/rfc822");
+        startActivity(Intent.createChooser(intent, "Elige cómo enviarlo: "));
+
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -62,6 +168,8 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
         switch (id)
         {
             case R.id.navigation_home:
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
                 break;
             case R.id.navigation_novedades:
                 intent.putExtra("SECTION_ID", 0);
