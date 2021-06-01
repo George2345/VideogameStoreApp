@@ -64,6 +64,8 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
         switch (id)
         {
             case R.id.navigation_home:
+                Intent intentHome = new Intent(this, MainActivity.class);
+                startActivity(intentHome);
                 break;
             case R.id.navigation_novedades:
                 intent.putExtra("SECTION_ID", 0);
@@ -80,6 +82,18 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
             case R.id.navigation_xbox:
                 intent.putExtra("SECTION_ID", 3);
                 startActivity(intent);
+                break;
+            case R.id.navigation_carrito:
+                Intent intentShopCart = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intentShopCart);
+                break;
+            case R.id.navigation_location:
+                Intent intentLocation = new Intent(this, LocationActivity.class);
+                startActivity(intentLocation);
+                break;
+            case R.id.navigation_contact:
+                Intent intent_contact = new Intent(this, ContactActivity.class);
+                startActivity(intent_contact);
                 break;
         }
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);

@@ -9,9 +9,16 @@ import androidx.cursoradapter.widget.SimpleCursorAdapter;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 
 public class NovedadesFragment extends ListFragment {
@@ -26,14 +33,21 @@ public class NovedadesFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        //Obtengo la fecha actual
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String currentDate = df.format(c);
+
+        //Obtengo la fecha menos 1 mes
+        Calendar c2 = Calendar.getInstance();
+        c2.add(Calendar.MONTH, -1);
+        SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String currentDate2 = df2.format(c2.getTime());
+
         SQLiteOpenHelper gameDbHelper = new GameDataHelper(getContext()) ;
         SQLiteDatabase db = gameDbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery(" SELECT _id, NAME, PRICE FROM GAMES WHERE PLATFORM='PS4'", null);
-        /*Cursor cursor = db.query("GAMES",
-                new String[] {"_id", "NAME", "PRICE"},
-                null,
-                null,
-                null, null, null);*/
+        Cursor cursor = db.rawQuery(" SELECT _id, NAME, PRICE FROM GAMES WHERE RELEASE_DATE BETWEEN '"+ currentDate2 +"' AND '" + currentDate + "'", null);
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
                 R.layout.item_section_list,

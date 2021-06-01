@@ -24,7 +24,7 @@ public class GameDataHelper extends SQLiteOpenHelper {
                 + "IMAGE_ID INTEGER, "
                 + "PRICE DOUBLE, "
                 + "PLATFORM TEXT, "
-                + "RELEASE_DATE TEXT, "
+                + "RELEASE_DATE DATE, "
                 + "COMPANY TEXT, "
                 + "OFFER INTEGER DEFAULT 0, "
                 + "SHOPPING_CART INTEGER DEFAULT 0,"

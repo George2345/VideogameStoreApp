@@ -134,8 +134,12 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
                 m_adapter.notifyDataSetChanged();
                 break;
             case R.id.navigation_carrito:
+                Intent intentShopCart = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intentShopCart);
                 break;
             case R.id.navigation_location:
+                Intent intentLocation = new Intent(this, LocationActivity.class);
+                startActivity(intentLocation);
                 break;
             case R.id.navigation_contact:
                 Intent intent_contact = new Intent(this, ContactActivity.class);
@@ -149,6 +153,6 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
 
 
     public void addItemFromSection(View v){
-
+        Toast.makeText(SectionActivity.this, "Añadido al carrito", Toast.LENGTH_LONG).show();
     }
 }

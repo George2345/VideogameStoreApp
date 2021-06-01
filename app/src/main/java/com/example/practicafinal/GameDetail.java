@@ -158,12 +158,10 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
 
 
 
-    //Metodo para el boton de añadir un articulo de la lista
+    //Metodo para el boton de añadir un articulo de la lista desde los detalles
     public void addItemFromDetails(View v){
         ContentValues gameValues = new ContentValues();
         gameValues.put("SHOPPING_CART", 1);
-
-
         try
         {
             SQLiteOpenHelper gameDbHelper = new GameDataHelper(this);
@@ -172,7 +170,7 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
                     gameValues,
                     "_id = ?",
                     new String[]{Integer.toString(gameId)});
-            Toast.makeText(GameDetail.this, "Juego añadido al carrito", Toast.LENGTH_LONG).show();
+            Toast.makeText(GameDetail.this, "Añadido al carrito", Toast.LENGTH_LONG).show();
         }
         catch (Exception e) {}
 
