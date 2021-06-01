@@ -10,24 +10,20 @@ import androidx.cursoradapter.widget.SimpleCursorAdapter;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-
-public class NovedadesFragment extends ListFragment {
-
+public class NovedadesMainFragment extends ListFragment {
 
 
-    public NovedadesFragment() {
+    public NovedadesMainFragment() {
         // Required empty public constructor
     }
 
@@ -51,15 +47,15 @@ public class NovedadesFragment extends ListFragment {
         Cursor cursor = db.rawQuery(" SELECT _id, NAME, PRICE FROM GAMES WHERE RELEASE_DATE BETWEEN '"+ currentDate2 +"' AND '" + currentDate + "'", null);
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
-                R.layout.item_section_list,
+                R.layout.item_main_list,
                 cursor,
                 new String[]{"NAME", "PRICE"},
-                new int[] {R.id.textViewTitulo, R.id.textViewPrecio},
+                new int[] {R.id.textViewTituloMain, R.id.textViewPrecioMain},
                 0);
 
         setListAdapter(listAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_novedades, container, false);
+        return inflater.inflate(R.layout.fragment_novedades_main, container, false);
     }
 
     @Override

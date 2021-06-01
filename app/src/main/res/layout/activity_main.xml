@@ -8,36 +8,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_activity" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".MainActivity">
-
-            <include
-                android:id="@+id/toolbar"
-                layout="@layout/toolbar_activity" />
-
-            <ImageView
-                android:id="@+id/imageViewTienda"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:src="@drawable/gamestop_logo2" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:gravity="top" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:text="Novedades"
                     android:textAlignment="center"
@@ -46,21 +41,13 @@
 
                 <fragment
                     android:id="@+id/novedades_list_fragment"
-                    android:name="com.example.practicafinal.NovedadesFragment"
+                    android:name="com.example.practicafinal.NovedadesMainFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:text="Ofertas"
                     android:textAlignment="center"
@@ -73,58 +60,202 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <!--<Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />-->
+
             </LinearLayout>
 
-            <LinearLayout
+
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+
+
+                <ImageView
+                    android:id="@+id/imageViewTienda"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:src="@drawable/gamestop_logo2" />
+
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="PS4"
-                    android:textAlignment="center"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-                <fragment
-                    android:id="@+id/ps4_list_fragment"
-                    android:name="com.example.practicafinal.PS4Fragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="Ofertas"
+                        android:textAlignment="center"
+                        android:textSize="40dp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <fragment
+                        android:id="@+id/ofertas_list_fragment"
+                        android:name="com.example.practicafinal.OfertasFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="Xbox"
-                    android:textAlignment="center"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-                <fragment
-                    android:id="@+id/xbox_list_fragment"
-                    android:name="com.example.practicafinal.XboxFragment"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="PS4"
+                        android:textAlignment="center"
+                        android:textSize="40dp"
+                        android:textStyle="bold" />
+
+                    <fragment
+                        android:id="@+id/ps4_list_fragment"
+                        android:name="com.example.practicafinal.PS4Fragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="Xbox"
+                        android:textAlignment="center"
+                        android:textSize="40dp"
+                        android:textStyle="bold" />
+
+                    <fragment
+                        android:id="@+id/xbox_list_fragment"
+                        android:name="com.example.practicafinal.XboxFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
 
-            </LinearLayout>
+                </LinearLayout>
 
-        </LinearLayout>
+            </LinearLayout>-->
 
-    </ScrollView>
+        </ScrollView>
+
+    </LinearLayout>
+
+
 
 
     <com.google.android.material.navigation.NavigationView
