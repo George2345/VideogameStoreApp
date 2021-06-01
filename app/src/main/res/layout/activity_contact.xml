@@ -17,36 +17,52 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar_activity" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Seleccione una opción:" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
 
-        <RadioGroup
-            android:id="@+id/radio_contact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/radio_contactar"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contactar"/>
+                android:text="Seleccione una opción:" />
 
-            <RadioButton
-                android:id="@+id/radio_reclamacion"
+            <RadioGroup
+                android:id="@+id/radio_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reclamación de pedido"/>
+                android:orientation="vertical">
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/radio_contactar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contactar"/>
 
-        <Button
-            android:id="@+id/button_radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Siguiente" />
+                <RadioButton
+                    android:id="@+id/radio_reclamacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reclamación de pedido"/>
+
+            </RadioGroup>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/button_radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Siguiente"
+                    android:layout_gravity="center|top"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

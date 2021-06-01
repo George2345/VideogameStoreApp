@@ -56,14 +56,14 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
             @Override
             public void onClick(View v) {
                 if(contactar.isChecked()) {
-                    Intent intent1 = new Intent(ContactActivity.this, ContactarActivity.class);
-                    startActivity(intent1);
+                    Intent intentContact = new Intent(ContactActivity.this, ContactarActivity.class);
+                    startActivity(intentContact);
                 }
                 else if(reclamacion.isChecked()) {
-                    Intent intent2 = new Intent(ContactActivity.this, ReclamacionActivity.class);
-                    startActivity(intent2);
+                    Intent intentReclamation = new Intent(ContactActivity.this, ReclamacionActivity.class);
+                    startActivity(intentReclamation);
                 }
-                else{
+                else {
                     Toast.makeText(ContactActivity.this, "Seleccione una opción.", Toast.LENGTH_LONG).show();
                 }
 
@@ -132,12 +132,16 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
                 startActivity(intent);
                 break;
             case R.id.navigation_carrito:
+                Intent intentShopCart = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intentShopCart);
                 break;
             case R.id.navigation_location:
+                Intent intentLocation = new Intent(this, LocationActivity.class);
+                startActivity(intentLocation);
                 break;
             case R.id.navigation_contact:
-                Intent intent_contact = new Intent(this, ContactActivity.class);
-                startActivity(intent_contact);
+                Intent intentContact = new Intent(this, ContactActivity.class);
+                startActivity(intentContact);
                 break;
         }
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);

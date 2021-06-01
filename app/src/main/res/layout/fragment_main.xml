@@ -12,12 +12,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageViewTienda"
-                android:layout_width="wrap_content"
-                android:layout_height="160dp"
-                android:layout_weight="1"
-                android:src="@drawable/gamestop_logo2" />
 
             <TextView
                 android:layout_width="match_parent"

@@ -8,24 +8,125 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar_activity"
-            />
-
-        <fragment
-            android:id="@+id/leagues_list_fragment"
-            android:name="com.example.practicafinal.MainFragment"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
 
-    </LinearLayout>
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_activity" />
+
+            <ImageView
+                android:id="@+id/imageViewTienda"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:src="@drawable/gamestop_logo2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Novedades"
+                    android:textAlignment="center"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
+                <fragment
+                    android:id="@+id/novedades_list_fragment"
+                    android:name="com.example.practicafinal.NovedadesFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Ofertas"
+                    android:textAlignment="center"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
+                <fragment
+                    android:id="@+id/ofertas_list_fragment"
+                    android:name="com.example.practicafinal.OfertasFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="PS4"
+                    android:textAlignment="center"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
+                <fragment
+                    android:id="@+id/ps4_list_fragment"
+                    android:name="com.example.practicafinal.PS4Fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Xbox"
+                    android:textAlignment="center"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
+                <fragment
+                    android:id="@+id/xbox_list_fragment"
+                    android:name="com.example.practicafinal.XboxFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationdrawer_view"
         android:layout_width="wrap_content"

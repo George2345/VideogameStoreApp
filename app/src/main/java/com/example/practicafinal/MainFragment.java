@@ -26,17 +26,9 @@ public class MainFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(inflater.getContext(),
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ps4games));
-        setListAdapter(adapter);*/
-        SQLiteOpenHelper gameDbHelper = new GameDataHelper(getContext()) ;
+        /*SQLiteOpenHelper gameDbHelper = new GameDataHelper(getContext()) ;
         SQLiteDatabase db = gameDbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(" SELECT _id, NAME, PRICE FROM GAMES WHERE PLATFORM='PS4'", null);
-        /*Cursor cursor = db.query("GAMES",
-                new String[] {"_id", "NAME", "PRICE"},
-                null,
-                null,
-                null, null, null);*/
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
                 R.layout.item_main_list,
@@ -45,7 +37,7 @@ public class MainFragment extends ListFragment {
                 new int[] {R.id.textViewTituloMain, R.id.textViewPrecioMain},
                 0);
 
-        setListAdapter(listAdapter);
+        setListAdapter(listAdapter);*/
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false);
@@ -54,22 +46,17 @@ public class MainFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id)
     {
-        Intent intent = new Intent(getActivity(), GameDetail.class);
+        /*Intent intent = new Intent(getActivity(), GameDetail.class);
         SQLiteOpenHelper gameDbHelper = new GameDataHelper(getContext()) ;
         try
         {
             SQLiteDatabase db = gameDbHelper.getReadableDatabase();
             Cursor cursor = db.rawQuery(" SELECT _id FROM GAMES WHERE PLATFORM='PS4'", null);
-            /*Cursor cursor = db.query("GAMES",
-                    new String[] {"_id"},
-                    null,
-                    null,
-                    null, null, null);*/
             cursor.move(position+1);
             intent.putExtra("GAMEID", cursor.getString(0));
             startActivity(intent);
         }
         catch (Exception e) {
-        }
+        }*/
     }
 }

@@ -118,6 +118,8 @@ public class ContactarActivity extends AppCompatActivity implements NavigationVi
         switch (id)
         {
             case R.id.navigation_home:
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
                 break;
             case R.id.navigation_novedades:
                 intent.putExtra("SECTION_ID", 0);
@@ -144,8 +146,8 @@ public class ContactarActivity extends AppCompatActivity implements NavigationVi
                 startActivity(intentLocation);
                 break;
             case R.id.navigation_contact:
-                Intent intent_contact = new Intent(this, ContactActivity.class);
-                startActivity(intent_contact);
+                Intent intentContact = new Intent(this, ContactActivity.class);
+                startActivity(intentContact);
                 break;
         }
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);

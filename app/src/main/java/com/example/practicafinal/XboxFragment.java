@@ -28,11 +28,6 @@ public class XboxFragment extends ListFragment {
         SQLiteOpenHelper gameDbHelper = new GameDataHelper(getContext()) ;
         SQLiteDatabase db = gameDbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(" SELECT _id, NAME, PRICE FROM GAMES WHERE PLATFORM='Xbox'", null);
-        /*Cursor cursor = db.query("GAMES",
-                new String[] {"_id", "NAME", "PRICE"},
-                null,
-                null,
-                null, null, null);*/
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
                 R.layout.item_section_list,
@@ -55,11 +50,6 @@ public class XboxFragment extends ListFragment {
         {
             SQLiteDatabase db = gameDbHelper.getReadableDatabase();
             Cursor cursor = db.rawQuery(" SELECT _id FROM GAMES WHERE PLATFORM='Xbox'", null);
-            /*Cursor cursor = db.query("GAMES",
-                    new String[] {"_id"},
-                    null,
-                    null,
-                    null, null, null);*/
             cursor.move(position+1);
             intent.putExtra("GAMEID", cursor.getString(0));
             startActivity(intent);
