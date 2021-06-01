@@ -56,6 +56,11 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
 
     }
 
+    public void finalizePurchase(View v){
+        Intent intent = new Intent(ShoppingCartActivity.this, FinalizarCompraActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

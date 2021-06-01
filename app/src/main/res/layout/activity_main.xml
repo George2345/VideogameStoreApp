@@ -17,9 +17,11 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar_activity" />
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fillViewport="true">
             <!--
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -31,8 +33,36 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recycler View inside a Scroll View"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Below is a Recycler View as an example."
+                    android:textSize="16sp" />
+
+                <ListView
+                    android:id="@+id/listViewtest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="This textview automatically goes below the Recycler View."
+                    android:textSize="16sp" />
+
+
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -60,9 +90,9 @@
                     android:id="@+id/ofertas_list_fragment"
                     android:name="com.example.practicafinal.OfertasFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content" />-->
 
-                <TextView
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -90,7 +120,7 @@
                     android:id="@+id/xbox_list_fragment"
                     android:name="com.example.practicafinal.XboxFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content" />-->
 
                 <Button
                     android:layout_width="match_parent"
@@ -283,7 +313,7 @@
 
             </LinearLayout>-->
 
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>
 

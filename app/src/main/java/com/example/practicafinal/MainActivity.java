@@ -8,19 +8,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.LocaleList;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.Window;
-import android.widget.ImageButton;
-import android.widget.ScrollView;
-import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +44,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ListView listView = (ListView) findViewById(R.id.listViewtest);
+        ArrayList<String> testList = new ArrayList<>();
+        testList.add("marcos");
+        testList.add("maria");
+        testList.add("jose");
+        testList.add("marcos");
+        testList.add("maria");
+        testList.add("jose");
+        testList.add("marcos");
+        testList.add("maria");
+        testList.add("jose");
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, testList);
+        listView.setAdapter(adapter);
 
 
 

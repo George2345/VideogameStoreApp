@@ -11,20 +11,28 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class ContactActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class FinalizarCompraActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
+    EditText editTextName;
+    EditText editTextDir;
+    EditText editTextTelefono;
+    EditText editTextEmail;
+
+    RadioButton radioButtonVisa;
+    RadioButton radioButtonMastercard;
+    RadioButton radioButtonPaypal;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
+        setContentView(R.layout.activity_finalizar_compra);
 
         //Toolbar
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
@@ -46,29 +54,35 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        RadioButton contactar = (RadioButton) findViewById(R.id.radio_contactar);
-        RadioButton reclamacion = (RadioButton) findViewById(R.id.radio_reclamacion);
+        editTextName = (EditText) findViewById(R.id.edit_text_nombre);
+        editTextDir = (EditText) findViewById(R.id.edit_text_direccion);
+        editTextTelefono = (EditText) findViewById(R.id.edit_text_telefono) ;
+        editTextEmail = (EditText) findViewById(R.id.edit_text_email);
 
-        Button buttonSiguiente = (Button) findViewById(R.id.button_radioGroup);
-        buttonSiguiente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(contactar.isChecked()) {
-                    Intent intentContact = new Intent(ContactActivity.this, ContactarActivity.class);
-                    startActivity(intentContact);
-                }
-                else if(reclamacion.isChecked()) {
-                    Intent intentReclamation = new Intent(ContactActivity.this, ReclamacionActivity.class);
-                    startActivity(intentReclamation);
-                }
-                else {
-                    Toast.makeText(ContactActivity.this, "Seleccione una opción.", Toast.LENGTH_LONG).show();
-                }
+        radioButtonVisa = (RadioButton) findViewById(R.id.radio_visa);
+        radioButtonMastercard = (RadioButton) findViewById(R.id.radio_mastercard);
+        radioButtonPaypal = (RadioButton) findViewById(R.id.radio_paypal);
+    }
 
-            }
-        });
+    public void buyButton(View v) {
+        if (editTextName.getText().toString().isEmpty() || editTextDir.getText().toString().isEmpty()
+                || editTextTelefono.getText().toString().isEmpty() || editTextEmail.getText().toString().isEmpty()){
+            Toast.makeText(FinalizarCompraActivity.this, "Rellene los campos en blanco", Toast.LENGTH_LONG).show();
+        }
+        else if (!radioButtonVisa.isChecked() && !radioButtonMastercard.isChecked() && !radioButtonPaypal.isChecked()){
+            Toast.makeText(FinalizarCompraActivity.this, "Seleccione un método de pago", Toast.LENGTH_LONG).show();
+        }
+        else {
+            String nombre = editTextName.getText().toString();
+            String dir = editTextDir.getText().toString();
+            String telefono = editTextTelefono.getText().toString();
+            String email = editTextEmail.getText().toString();
+
+
+        }
 
     }
+
 
     @Override
     public void onBackPressed() {
@@ -146,5 +160,4 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

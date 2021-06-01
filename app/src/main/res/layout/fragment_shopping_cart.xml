@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tu pedido:"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:textStyle="bold"/>
 
         <View
             android:layout_width="match_parent"

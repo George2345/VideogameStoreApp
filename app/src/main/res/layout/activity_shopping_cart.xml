@@ -36,7 +36,8 @@
             android:layout_height="80dp"
             android:layout_gravity="bottom"
             android:text="Finalizar compra"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:onClick="finalizePurchase"/>
 
     </FrameLayout>
     <com.google.android.material.navigation.NavigationView
