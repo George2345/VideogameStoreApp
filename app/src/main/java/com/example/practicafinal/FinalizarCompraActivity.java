@@ -33,6 +33,8 @@ public class FinalizarCompraActivity extends AppCompatActivity implements Naviga
     RadioButton radioButtonMastercard;
     RadioButton radioButtonPaypal;
 
+    String precioTotal;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,8 @@ public class FinalizarCompraActivity extends AppCompatActivity implements Naviga
         radioButtonVisa = (RadioButton) findViewById(R.id.radio_visa);
         radioButtonMastercard = (RadioButton) findViewById(R.id.radio_mastercard);
         radioButtonPaypal = (RadioButton) findViewById(R.id.radio_paypal);
+
+        precioTotal = getIntent().getStringExtra("PRECIO_TOTAL");
     }
 
     public void buyButton(View v) {
@@ -107,7 +111,7 @@ public class FinalizarCompraActivity extends AppCompatActivity implements Naviga
                 metodoPago = "Paypal";
             }
 
-            String message = "Nombre: " + nombre + "\n" + "Dirección: " + dir + "\n" + "Teléfono: " + telefono + "\n" + "Método de pago: " + metodoPago + "\n" + "Videojuegos:\n";
+            String message = "Nombre: " + nombre + "\nDirección: " + dir + "\nTeléfono: " + telefono + "\nMétodo de pago: " + metodoPago + "\nPrecio total: " + precioTotal + "\nVideojuegos:\n";
 
             for (int j = 0; j < cursor.getCount(); j++){
                 message = message + videogameNames[j] + "\n";

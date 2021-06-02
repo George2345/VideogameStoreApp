@@ -48,8 +48,6 @@ public class PS4Fragment extends ListFragment {
                 0);
 
         setListAdapter(listAdapter);
-
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ps4, container, false);
     }

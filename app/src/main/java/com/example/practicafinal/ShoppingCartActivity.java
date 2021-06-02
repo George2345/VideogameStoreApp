@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -61,12 +62,6 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
 
     }
 
-    public void finalizePurchase(View v){
-        Intent intent = new Intent(ShoppingCartActivity.this, FinalizarCompraActivity.class);
-        startActivity(intent);
-    }
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -111,6 +106,14 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
         return true;
     }
 
+
+    public void finalizePurchase(View v){
+        Intent intent = new Intent(ShoppingCartActivity.this, FinalizarCompraActivity.class);
+        String precioTotal = ShoppingCartFragment.getPrecioTotal();
+        intent.putExtra("PRECIO_TOTAL", precioTotal);
+        startActivity(intent);
+    }
+
     //Metodo para el boton de eliminar un articulo de la lista
     public void deleteItem(View v){
         TextView textView = (TextView) v.findViewById(R.id.textViewId);
@@ -127,6 +130,10 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
                     "_id = ?",
                     new String[]{id});
             Toast.makeText(ShoppingCartActivity.this, "Eliminado del carrito", Toast.LENGTH_SHORT).show();
+
+            //Recargar actividad
+            finish();
+            startActivity(getIntent());
         }
         catch (Exception e) {}
     }

@@ -11,17 +11,27 @@ import androidx.cursoradapter.widget.SimpleCursorAdapter;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 public class ShoppingCartFragment extends ListFragment {
 
+    private static String precioTotal;
+
     public ShoppingCartFragment() {
         // Required empty public constructor
+    }
+
+    public static String getPrecioTotal(){
+        return precioTotal;
     }
 
     @Override
@@ -42,10 +52,25 @@ public class ShoppingCartFragment extends ListFragment {
                 0);
 
         setListAdapter(listAdapter);
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_shopping_cart, container, false);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        View view = getView();
+        if (view != null){
+            //Obtengo el precio total de los juegos añadidos al carrito
+            SQLiteOpenHelper gameDbHelper = new GameDataHelper(getContext()) ;
+            SQLiteDatabase db = gameDbHelper.getReadableDatabase();
+            Cursor cursor2 = db.rawQuery(" SELECT SUM(PRICE) FROM GAMES WHERE SHOPPING_CART=1", null);
+            cursor2.moveToFirst();
+            precioTotal = cursor2.getString(0);
+            ((TextView)view.findViewById(R.id.textViewPrecioTotal)).setText(precioTotal);
+        }
+    }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id)
