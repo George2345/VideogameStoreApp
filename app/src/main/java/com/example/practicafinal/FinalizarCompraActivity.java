@@ -4,10 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
+import androidx.cursoradapter.widget.SimpleCursorAdapter;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -73,11 +78,47 @@ public class FinalizarCompraActivity extends AppCompatActivity implements Naviga
             Toast.makeText(FinalizarCompraActivity.this, "Seleccione un método de pago", Toast.LENGTH_LONG).show();
         }
         else {
+
+            SQLiteOpenHelper gameDbHelper = new GameDataHelper(this) ;
+            SQLiteDatabase db = gameDbHelper.getReadableDatabase();
+            Cursor cursor = db.rawQuery(" SELECT NAME FROM GAMES WHERE SHOPPING_CART=1", null);
+            String[] videogameNames = new String[cursor.getCount()];
+            int i = 0;
+            cursor.moveToFirst();
+            while (i < cursor.getCount()){
+                videogameNames[i] = cursor.getString(0);
+                cursor.moveToNext();
+                i++;
+            }
+
             String nombre = editTextName.getText().toString();
             String dir = editTextDir.getText().toString();
             String telefono = editTextTelefono.getText().toString();
             String email = editTextEmail.getText().toString();
+            String[] emails = email.split(",");
+            String metodoPago = null;
+            if (radioButtonVisa.isChecked()){
+                metodoPago = "Visa";
+            }
+            else if (radioButtonMastercard.isChecked()){
+                metodoPago = "Mastercard";
+            }
+            else if (radioButtonPaypal.isChecked()){
+                metodoPago = "Paypal";
+            }
 
+            String message = "Nombre: " + nombre + "\n" + "Dirección: " + dir + "\n" + "Teléfono: " + telefono + "\n" + "Método de pago: " + metodoPago + "\n" + "Videojuegos:\n";
+
+            for (int j = 0; j < cursor.getCount(); j++){
+                message = message + videogameNames[j] + "\n";
+            }
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_EMAIL, emails);
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Confirmación de pedido GameStop");
+            intent.putExtra(Intent.EXTRA_TEXT, message);
+
+            intent.setType("text/plain");
+            startActivity(Intent.createChooser(intent, "Elige cómo enviarlo: "));
 
         }
 
