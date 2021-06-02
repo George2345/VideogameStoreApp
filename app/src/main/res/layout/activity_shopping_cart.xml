@@ -22,22 +22,31 @@
                 layout="@layout/toolbar_activity"
                 />
 
-            <fragment
-                android:id="@+id/shopppingcart_fragment"
-                android:name="com.example.practicafinal.ShoppingCartFragment"
+
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent">
+
+                <fragment
+                    android:id="@+id/shopppingcart_fragment"
+                    android:name="com.example.practicafinal.ShoppingCartFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_gravity="bottom"
+                    android:text="Finalizar compra"
+                    android:textSize="20dp"
+                    android:onClick="finalizePurchase"/>
+
+            </FrameLayout>
         </LinearLayout>
 
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_gravity="bottom"
-            android:text="Finalizar compra"
-            android:textSize="20dp"
-            android:onClick="finalizePurchase"/>
+
 
     </FrameLayout>
     <com.google.android.material.navigation.NavigationView
