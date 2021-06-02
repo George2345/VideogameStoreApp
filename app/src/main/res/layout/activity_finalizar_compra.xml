@@ -133,7 +133,8 @@
                             android:layout_gravity="bottom"
                             android:text="Comprar"
                             android:textSize="20dp"
-                            android:onClick="buyButton"/>
+                            android:onClick="buyButton"
+                            />
 
                     </LinearLayout>
 
