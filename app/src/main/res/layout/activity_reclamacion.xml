@@ -77,21 +77,14 @@
                     android:layout_height="wrap_content"
                     android:text="Imagen: "
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-                <Button
-                    android:id="@+id/button_camara"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:text="Cámara"
-                    android:onClick="dispatchTakePictureIntent"/>
 
                 <Button
-                    android:id="@+id/button_galeria"
+                    android:id="@+id/button_popup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:text="Galería"
-                    android:onClick="dispatchOpenGalleryIntent"/>
+                    android:text="Añadir"
+                    android:onClick="onButtonShowPopupWindowClick"/>
 
 
                 <FrameLayout

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#62def8"
+    android:orientation="vertical"
+    tools:context=".ReclamacionActivity">
+
+    <Button
+        android:id="@+id/button_camara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="Cámara"
+        android:onClick="dispatchTakePictureIntent"/>
+
+    <Button
+        android:id="@+id/button_galeria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="Galería"
+        android:onClick="dispatchOpenGalleryIntent"/>
+
+</LinearLayout>
