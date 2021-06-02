@@ -16,19 +16,28 @@
         android:gravity="center_vertical"
         android:text="Titulo"
         android:textAlignment="textStart"
-        android:textSize="25dp"
+        android:textSize="25sp"
         tools:ignore="RtlCompat"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginStart="20dp" />
 
     <TextView
         android:id="@+id/textViewPrecioMain"
         android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:textSize="25dp"
-        android:text="NN.N€"
-        android:textAlignment="textEnd"
         android:gravity="center"
-        tools:ignore="RtlCompat"
-        android:layout_marginRight="20dp"/>
+        android:text="NN.N"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:layout_width="0.1dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="€"
+        android:textAlignment="textStart"
+        android:textSize="20sp"
+        tools:ignore="RtlCompat" />
 </LinearLayout>
