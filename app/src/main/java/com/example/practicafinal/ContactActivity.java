@@ -62,12 +62,11 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
                     startActivity(intentReclamation);
                 }
                 else {
-                    Toast.makeText(ContactActivity.this, "Seleccione una opción.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ContactActivity.this, "Seleccione una opción", Toast.LENGTH_LONG).show();
                 }
 
             }
         });
-
     }
 
     @Override

@@ -24,6 +24,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -62,6 +63,11 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
         navigationView.setNavigationItemSelectedListener(this);
 
         m_imageView = findViewById(R.id.imagen_reclamacion);
+        nombre = findViewById(R.id.edit_text_nombre2);
+        email = findViewById(R.id.edit_text_email2);
+        idFactura = findViewById(R.id.edit_text_idFactura2);
+        motivo = findViewById(R.id.edit_text_motivo2);
+        //imagenReclamacion = findViewById(R.id.imagen_reclamacion);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -179,28 +185,25 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
 
     private void sendReclamacion() {
 
-        nombre = findViewById(R.id.edit_text_nombre2);
-        email = findViewById(R.id.edit_text_email2);
-        idFactura = findViewById(R.id.edit_text_idFactura2);
-        motivo = findViewById(R.id.edit_text_motivo2);
-        //imagenReclamacion = findViewById(R.id.imagen_reclamacion);
+        if (nombre.getText().toString().isEmpty() || email.getText().toString().isEmpty() || idFactura.getText().toString().isEmpty() || motivo.getText().toString().isEmpty()){
+            Toast.makeText(ReclamacionActivity.this, "Rellene los campos en blanco", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            String inputEmail = email.getText().toString();
+            String[] emails = inputEmail.split(",");
+            String inputNombre = nombre.getText().toString();
+            String inputIdFactura = idFactura.getText().toString();
+            String inputMotivo = motivo.getText().toString();
 
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_EMAIL, emails);
+            intent.putExtra(Intent.EXTRA_SUBJECT, inputIdFactura);
+            intent.putExtra(Intent.EXTRA_TEXT, inputNombre + "\n \n" + inputMotivo);
+            //intent.putExtra(Intent.EXTRA_STREAM, imagenReclamacion);
 
-        String inputEmail = email.getText().toString();
-        String[] emails = inputEmail.split(",");
-        String inputNombre = nombre.getText().toString();
-        String inputIdFactura = idFactura.getText().toString();
-        String inputMotivo = motivo.getText().toString();
-
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_EMAIL, emails);
-        intent.putExtra(Intent.EXTRA_SUBJECT, inputIdFactura);
-        intent.putExtra(Intent.EXTRA_TEXT, inputNombre + "\n \n" + inputMotivo);
-        //intent.putExtra(Intent.EXTRA_STREAM, imagenReclamacion);
-
-        intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent, "Elige cómo enviarlo: "));
-
+            intent.setType("message/rfc822");
+            startActivity(Intent.createChooser(intent, "Elige cómo enviarlo: "));
+        }
     }
 
     @Override

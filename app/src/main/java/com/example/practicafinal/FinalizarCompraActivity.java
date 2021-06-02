@@ -76,10 +76,10 @@ public class FinalizarCompraActivity extends AppCompatActivity implements Naviga
     public void buyButton(View v) {
         if (editTextName.getText().toString().isEmpty() || editTextDir.getText().toString().isEmpty()
                 || editTextTelefono.getText().toString().isEmpty() || editTextEmail.getText().toString().isEmpty()){
-            Toast.makeText(FinalizarCompraActivity.this, "Rellene los campos en blanco", Toast.LENGTH_LONG).show();
+            Toast.makeText(FinalizarCompraActivity.this, "Rellene los campos en blanco", Toast.LENGTH_SHORT).show();
         }
         else if (!radioButtonVisa.isChecked() && !radioButtonMastercard.isChecked() && !radioButtonPaypal.isChecked()){
-            Toast.makeText(FinalizarCompraActivity.this, "Seleccione un método de pago", Toast.LENGTH_LONG).show();
+            Toast.makeText(FinalizarCompraActivity.this, "Seleccione un método de pago", Toast.LENGTH_SHORT).show();
         }
         else {
 
@@ -111,7 +111,7 @@ public class FinalizarCompraActivity extends AppCompatActivity implements Naviga
                 metodoPago = "Paypal";
             }
 
-            String message = "Nombre: " + nombre + "\nDirección: " + dir + "\nTeléfono: " + telefono + "\nMétodo de pago: " + metodoPago + "\nPrecio total: " + precioTotal + "\nVideojuegos:\n";
+            String message = "Nombre: " + nombre + "\nDirección: " + dir + "\nTeléfono: " + telefono + "\nMétodo de pago: " + metodoPago + "\nPrecio total: " + precioTotal + "€\nVideojuegos:\n";
 
             for (int j = 0; j < cursor.getCount(); j++){
                 message = message + videogameNames[j] + "\n";

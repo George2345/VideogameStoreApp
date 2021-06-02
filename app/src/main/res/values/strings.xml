@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">GameStop</string>
     <string name="home_tab">Inicio</string>
-    <string name="novedades_tab">Novedades</string>
+    <string name="novedades_tab">Novedad</string>
     <string name="ofertas_tab">Ofertas</string>
     <string name="ps4_tab">PS4</string>
     <string name="xbox_tab">Xbox</string>

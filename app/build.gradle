@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.secrets_gradle_plugin' version '0.5'
 }
+
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
@@ -41,5 +44,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
-
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
 }

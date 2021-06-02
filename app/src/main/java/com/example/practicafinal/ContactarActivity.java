@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -63,19 +64,23 @@ public class ContactarActivity extends AppCompatActivity implements NavigationVi
 
     private void sendConsulta() {
 
-        String inputEmail = email.getText().toString();
-        String[] emails = inputEmail.split(",");
-        String inputNombre = nombre.getText().toString();
-        String inputConsulta = consulta.getText().toString();
+        if (nombre.getText().toString().isEmpty() || email.getText().toString().isEmpty() || consulta.getText().toString().isEmpty()){
+            Toast.makeText(ContactarActivity.this, "Rellene los campos en blanco", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            String inputEmail = email.getText().toString();
+            String[] emails = inputEmail.split(",");
+            String inputNombre = nombre.getText().toString();
+            String inputConsulta = consulta.getText().toString();
 
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_EMAIL, emails);
-        intent.putExtra(Intent.EXTRA_SUBJECT, inputNombre);
-        intent.putExtra(Intent.EXTRA_TEXT, inputConsulta);
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_EMAIL, emails);
+            intent.putExtra(Intent.EXTRA_SUBJECT, inputNombre);
+            intent.putExtra(Intent.EXTRA_TEXT, inputConsulta);
 
-        intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent, "Elige cómo enviarlo: "));
-
+            intent.setType("message/rfc822");
+            startActivity(Intent.createChooser(intent, "Elige cómo enviarlo: "));
+        }
     }
 
     @Override
