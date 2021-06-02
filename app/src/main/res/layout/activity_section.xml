@@ -15,7 +15,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            android:theme="?attr/actionBarTheme">
             <include
                 android:id="@+id/toolbar"
                 layout="@layout/toolbar_activity"

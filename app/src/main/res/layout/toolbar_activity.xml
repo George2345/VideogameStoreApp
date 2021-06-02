@@ -15,6 +15,7 @@
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:id="@+id/toolbar_title" />
 
 
