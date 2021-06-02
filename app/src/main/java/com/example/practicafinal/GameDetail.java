@@ -167,7 +167,7 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
                     gameValues,
                     "_id = ?",
                     new String[]{Integer.toString(gameId)});
-            Toast.makeText(GameDetail.this, "Añadido al carrito", Toast.LENGTH_LONG).show();
+            Toast.makeText(GameDetail.this, "Añadido al carrito", Toast.LENGTH_SHORT).show();
         }
         catch (Exception e) {}
     }

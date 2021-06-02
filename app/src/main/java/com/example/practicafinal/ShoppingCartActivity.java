@@ -126,7 +126,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
                     gameValues,
                     "_id = ?",
                     new String[]{id});
-            Toast.makeText(ShoppingCartActivity.this, "Eliminado del carrito", Toast.LENGTH_LONG).show();
+            Toast.makeText(ShoppingCartActivity.this, "Eliminado del carrito", Toast.LENGTH_SHORT).show();
         }
         catch (Exception e) {}
     }

@@ -22,113 +22,121 @@
                 layout="@layout/toolbar_activity"
                 />
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tus datos:"
-                    android:textSize="30dp"
-                    android:textStyle="bold"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/darker_gray"
-                    android:layout_marginBottom="10dp"/>
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nombre: "
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-                    <EditText
-                        android:id="@+id/edit_text_nombre"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textEmailSubject"/>
+                        android:text="Tus datos:"
+                        android:textSize="30dp"
+                        android:textStyle="bold"/>
 
-                    <TextView
+                    <View
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Dir: "
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-                    <EditText
-                        android:id="@+id/edit_text_direccion"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textEmailAddress"/>
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_marginBottom="10dp"/>
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Telefono: "
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-                    <EditText
-                        android:id="@+id/edit_text_telefono"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:lines="1"
-                        android:gravity="start|top"/>
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Email: "
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-                    <EditText
-                        android:id="@+id/edit_text_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:lines="1"
-                        android:gravity="start|top"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="Método de pago: "
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-
-                    <RadioGroup
-                        android:id="@+id/radio_metodo_pago"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RadioButton
-                            android:id="@+id/radio_visa"
+                        <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Visa"/>
-
-                        <RadioButton
-                            android:id="@+id/radio_mastercard"
+                            android:text="Nombre: "
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                        <EditText
+                            android:id="@+id/edit_text_nombre"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Mastercard"/>
+                            android:inputType="textEmailSubject"/>
 
-                        <RadioButton
-                            android:id="@+id/radio_paypal"
+                        <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Paypal"/>
+                            android:text="Dir: "
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                        <EditText
+                            android:id="@+id/edit_text_direccion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"/>
 
-                    </RadioGroup>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Telefono: "
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                        <EditText
+                            android:id="@+id/edit_text_telefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lines="1"
+                            android:gravity="start|top"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email: "
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                        <EditText
+                            android:id="@+id/edit_text_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lines="1"
+                            android:gravity="start|top"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="Método de pago: "
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                        <RadioGroup
+                            android:id="@+id/radio_metodo_pago"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/radio_visa"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Visa"/>
+
+                            <RadioButton
+                                android:id="@+id/radio_mastercard"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Mastercard"/>
+
+                            <RadioButton
+                                android:id="@+id/radio_paypal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Paypal"/>
+
+                        </RadioGroup>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </ScrollView>
+
+
 
         </LinearLayout>
 
