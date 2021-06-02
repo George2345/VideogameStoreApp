@@ -31,6 +31,7 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
     private EditText email;
     private EditText motivo;
     private EditText idFactura;
+    private Uri imagenReclamacion;
     ImageView m_imageView;
 
     @Override
@@ -177,6 +178,8 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
         email = findViewById(R.id.edit_text_email2);
         idFactura = findViewById(R.id.edit_text_idFactura2);
         motivo = findViewById(R.id.edit_text_motivo2);
+        //imagenReclamacion = findViewById(R.id.imagen_reclamacion);
+
 
         String inputEmail = email.getText().toString();
         String[] emails = inputEmail.split(",");
@@ -188,6 +191,7 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
         intent.putExtra(Intent.EXTRA_EMAIL, emails);
         intent.putExtra(Intent.EXTRA_SUBJECT, inputIdFactura);
         intent.putExtra(Intent.EXTRA_TEXT, inputNombre + "\n \n" + inputMotivo);
+        //intent.putExtra(Intent.EXTRA_STREAM, imagenReclamacion);
 
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Elige cómo enviarlo: "));

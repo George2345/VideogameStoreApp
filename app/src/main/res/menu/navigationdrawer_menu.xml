@@ -2,32 +2,32 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/navigation_home"
-            android:icon="@android:drawable/ic_menu_edit"
+            android:icon="@mipmap/ic_home_foreground"
             android:title="@string/home_tab"
             android:checked="true"/>
         <item
             android:id="@+id/navigation_novedades"
-            android:icon="@android:drawable/ic_menu_gallery"
+            android:icon="@mipmap/ic_news_foreground"
             android:title="@string/novedades_tab"
             />
         <item
             android:id="@+id/navigation_ofertas"
-            android:icon="@android:drawable/ic_menu_gallery"
+            android:icon="@mipmap/ic_offer_foreground"
             android:title="@string/ofertas_tab"
             />
         <item
             android:id="@+id/navigation_ps4"
-            android:icon="@android:drawable/ic_menu_gallery"
+            android:icon="@mipmap/ic_play_station_foreground"
             android:title="@string/ps4_tab"
             />
         <item
             android:id="@+id/navigation_xbox"
-            android:icon="@android:drawable/ic_menu_gallery"
+            android:icon="@mipmap/ic_xbox_foreground"
             android:title="@string/xbox_tab"
             />
         <item
             android:id="@+id/navigation_carrito"
-            android:icon="@android:drawable/ic_menu_help"
+            android:icon="@mipmap/ic_marketcart_foreground"
             android:title="@string/carrito_tab"
             />
 
@@ -36,12 +36,12 @@
         <menu>
             <item
                 android:id="@+id/navigation_location"
-                android:icon="@android:drawable/ic_menu_gallery"
+                android:icon="@mipmap/ic_location_foreground"
                 android:title="@string/location_tab"
                 />
             <item
                 android:id="@+id/navigation_contact"
-                android:icon="@android:drawable/sym_action_email"
+                android:icon="@mipmap/ic_send_email3_foreground"
                 android:title="@string/contact_tab"
                 />
         </menu>
