@@ -44,14 +44,30 @@
         android:textStyle="bold"
         tools:ignore="RtlCompat" />
 
-    <ImageButton
-        android:id="@+id/imageButtonCart"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="#FFFFFF"
-        app:srcCompat="@mipmap/ic_carrito_foreground"
-        android:onClick="addItemFromSection"
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
-        />
+        <ImageButton
+            android:id="@+id/imageButtonCart"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            app:srcCompat="@mipmap/ic_carrito_foreground"
+            />
+
+        <TextView
+            android:id="@+id/textViewId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="TextView"
+            android:visibility="visible"
+            android:onClick="addItemFromSection"
+            />
+
+
+    </RelativeLayout>
+
+
 </LinearLayout>

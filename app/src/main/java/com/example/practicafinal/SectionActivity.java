@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -153,6 +154,8 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
 
 
     public void addItemFromSection(View v){
-        Toast.makeText(SectionActivity.this, "Añadido al carrito", Toast.LENGTH_LONG).show();
+        TextView textView = (TextView) v.findViewById(R.id.textViewId);
+        String id = textView.getText().toString();
+        Toast.makeText(SectionActivity.this, id, Toast.LENGTH_LONG).show();
     }
 }
