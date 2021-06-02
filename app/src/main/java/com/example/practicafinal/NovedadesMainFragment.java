@@ -44,7 +44,7 @@ public class NovedadesMainFragment extends ListFragment {
 
         SQLiteOpenHelper gameDbHelper = new GameDataHelper(getContext()) ;
         SQLiteDatabase db = gameDbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery(" SELECT _id, NAME, PRICE FROM GAMES WHERE RELEASE_DATE BETWEEN '"+ currentDate2 +"' AND '" + currentDate + "'", null);
+        Cursor cursor = db.rawQuery(" SELECT _id, NAME, PRICE FROM GAMES WHERE RELEASE_DATE BETWEEN '"+ currentDate2 +"' AND '" + currentDate + "' LIMIT 3", null);
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
                 R.layout.item_main_list,
@@ -52,6 +52,7 @@ public class NovedadesMainFragment extends ListFragment {
                 new String[]{"NAME", "PRICE"},
                 new int[] {R.id.textViewTituloMain, R.id.textViewPrecioMain},
                 0);
+
 
         setListAdapter(listAdapter);
         // Inflate the layout for this fragment
@@ -77,7 +78,7 @@ public class NovedadesMainFragment extends ListFragment {
         try
         {
             SQLiteDatabase db = gameDbHelper.getReadableDatabase();
-            Cursor cursor = db.rawQuery(" SELECT _id, NAME, PRICE FROM GAMES WHERE RELEASE_DATE BETWEEN '"+ currentDate2 +"' AND '" + currentDate + "'", null);
+            Cursor cursor = db.rawQuery(" SELECT _id, NAME, PRICE FROM GAMES WHERE RELEASE_DATE BETWEEN '"+ currentDate2 +"' AND '" + currentDate + "' LIMIT 3", null);
             cursor.move(position+1);
             intent.putExtra("GAMEID", cursor.getString(0));
             startActivity(intent);

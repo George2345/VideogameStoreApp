@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ListView listView = (ListView) findViewById(R.id.listViewtest);
+        /*ListView listView = (ListView) findViewById(R.id.listViewtest);
         ArrayList<String> testList = new ArrayList<>();
         testList.add("marcos");
         testList.add("maria");
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         testList.add("maria");
         testList.add("jose");
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, testList);
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter);*/
 
 
 

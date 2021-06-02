@@ -32,12 +32,12 @@ public class XboxMainFragment extends ListFragment {
                 R.layout.item_main_list,
                 cursor,
                 new String[]{"NAME", "PRICE"},
-                new int[] {R.id.textViewTitulo, R.id.textViewPrecio},
+                new int[] {R.id.textViewTituloMain, R.id.textViewPrecioMain},
                 0);
 
         setListAdapter(listAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_xbox, container, false);
+        return inflater.inflate(R.layout.fragment_xbox_main, container, false);
     }
 
     @Override

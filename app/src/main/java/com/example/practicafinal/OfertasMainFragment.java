@@ -35,7 +35,7 @@ public class OfertasMainFragment extends ListFragment {
                 R.layout.item_main_list,
                 cursor,
                 new String[]{"NAME", "PRICE"},
-                new int[] {R.id.textViewTitulo, R.id.textViewPrecio},
+                new int[] {R.id.textViewTituloMain, R.id.textViewPrecioMain},
                 0);
 
         setListAdapter(listAdapter);

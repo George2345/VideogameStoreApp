@@ -17,12 +17,18 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar_activity" />
 
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <!--
+            <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fillViewport="true">
-            <!--
+
             android:layout_height="0dp"
             android:layout_weight="1"
             android:fillViewport="true"
@@ -34,35 +40,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Recycler View inside a Scroll View"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Below is a Recycler View as an example."
-                    android:textSize="16sp" />
-
-                <ListView
-                    android:id="@+id/listViewtest"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="This textview automatically goes below the Recycler View."
-                    android:textSize="16sp" />
-
-
-                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -88,11 +65,11 @@
 
                 <fragment
                     android:id="@+id/ofertas_list_fragment"
-                    android:name="com.example.practicafinal.OfertasFragment"
+                    android:name="com.example.practicafinal.OfertasMainFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />-->
+                    android:layout_height="wrap_content" />
 
-                <!--<TextView
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -103,7 +80,7 @@
 
                 <fragment
                     android:id="@+id/ps4_list_fragment"
-                    android:name="com.example.practicafinal.PS4Fragment"
+                    android:name="com.example.practicafinal.PS4MainFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -118,202 +95,13 @@
 
                 <fragment
                     android:id="@+id/xbox_list_fragment"
-                    android:name="com.example.practicafinal.XboxFragment"
+                    android:name="com.example.practicafinal.XboxMainFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />-->
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <!--<Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />-->
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
-
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-
-                <ImageView
-                    android:id="@+id/imageViewTienda"
-                    android:layout_width="match_parent"
-                    android:layout_height="160dp"
-                    android:src="@drawable/gamestop_logo2" />
-
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:text="Ofertas"
-                        android:textAlignment="center"
-                        android:textSize="40dp"
-                        android:textStyle="bold" />
-
-                    <fragment
-                        android:id="@+id/ofertas_list_fragment"
-                        android:name="com.example.practicafinal.OfertasFragment"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:text="PS4"
-                        android:textAlignment="center"
-                        android:textSize="40dp"
-                        android:textStyle="bold" />
-
-                    <fragment
-                        android:id="@+id/ps4_list_fragment"
-                        android:name="com.example.practicafinal.PS4Fragment"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:text="Xbox"
-                        android:textAlignment="center"
-                        android:textSize="40dp"
-                        android:textStyle="bold" />
-
-                    <fragment
-                        android:id="@+id/xbox_list_fragment"
-                        android:name="com.example.practicafinal.XboxFragment"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-
-                </LinearLayout>
-
-            </LinearLayout>-->
-
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
 
     </LinearLayout>
 

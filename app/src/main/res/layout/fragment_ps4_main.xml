@@ -12,7 +12,8 @@
         android:animationCache="false"
         android:divider="@null"
         android:scrollingCache="false"
-        android:smoothScrollbar="true"
+        android:smoothScrollbar="false"
+        android:nestedScrollingEnabled="false"
         />
 
 </LinearLayout>
