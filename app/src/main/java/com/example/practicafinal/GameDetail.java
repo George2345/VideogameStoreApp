@@ -72,8 +72,6 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
             ((TextView)findViewById(R.id.videogameReleaseDate)).setText(cursor.getString(5));
             ((TextView)findViewById(R.id.videogameCompany)).setText(cursor.getString(6));
             ((TextView)findViewById(R.id.videogameDescription)).setText(cursor.getString(7));
-            //boolean isChecked = (cursor.getInt(4) == 0) ? false : true;
-            //((CheckBox)findViewById(R.id.favoriteCheckbox)).setChecked(isChecked);
 
         }
         catch (Exception e){
@@ -157,7 +155,6 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
     }
 
 
-
     //Metodo para el boton de añadir un articulo de la lista desde los detalles
     public void addItemFromDetails(View v){
         ContentValues gameValues = new ContentValues();
@@ -173,7 +170,5 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
             Toast.makeText(GameDetail.this, "Añadido al carrito", Toast.LENGTH_LONG).show();
         }
         catch (Exception e) {}
-
-
     }
 }

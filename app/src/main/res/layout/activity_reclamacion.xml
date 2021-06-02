@@ -72,11 +72,29 @@
                     android:lines="4"
                     android:gravity="start|top"/>
 
-                <TextView
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Imagen: "
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Imagen:"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                    <Button
+                        android:id="@+id/button_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="Añadir"
+                        android:onClick="addImage"/>
+
+                </FrameLayout>
+
+
                 <Button
                     android:id="@+id/button_camara"
                     android:layout_width="wrap_content"
@@ -107,10 +125,7 @@
 
             </LinearLayout>
 
-
         </ScrollView>
-
-
 
     </LinearLayout>
 
