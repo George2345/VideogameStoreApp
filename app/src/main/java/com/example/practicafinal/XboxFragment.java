@@ -32,8 +32,8 @@ public class XboxFragment extends ListFragment {
                 getContext(),
                 R.layout.item_section_list,
                 cursor,
-                new String[]{"NAME", "PRICE"},
-                new int[] {R.id.textViewTitulo, R.id.textViewPrecio},
+                new String[]{"NAME", "PRICE", "_id"},
+                new int[] {R.id.textViewTitulo, R.id.textViewPrecio, R.id.textViewId},
                 0);
 
         setListAdapter(listAdapter);

@@ -6,11 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -108,6 +113,21 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
 
     //Metodo para el boton de eliminar un articulo de la lista
     public void deleteItem(View v){
+        TextView textView = (TextView) v.findViewById(R.id.textViewId);
+        String id = textView.getText().toString();
 
+        ContentValues gameValues = new ContentValues();
+        gameValues.put("SHOPPING_CART", 0);
+        try
+        {
+            SQLiteOpenHelper gameDbHelper = new GameDataHelper(this);
+            SQLiteDatabase db = gameDbHelper.getReadableDatabase();
+            db.update("GAMES",
+                    gameValues,
+                    "_id = ?",
+                    new String[]{id});
+            Toast.makeText(ShoppingCartActivity.this, "Eliminado del carrito", Toast.LENGTH_LONG).show();
+        }
+        catch (Exception e) {}
     }
 }

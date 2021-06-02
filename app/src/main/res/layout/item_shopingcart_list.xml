@@ -44,16 +44,32 @@
         android:textStyle="bold"
         tools:ignore="RtlCompat" />
 
-    <ImageButton
-        android:id="@+id/imageButtonCart"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="#FFFFFF"
-        app:srcCompat="@mipmap/ic_deletesmall_foreground"
-        android:onClick="deleteItem"
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp">
 
-        />
+        <ImageButton
+            android:id="@+id/imageButtonCart"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            app:srcCompat="@mipmap/ic_deletesmall_foreground"
+            />
+
+        <TextView
+            android:id="@+id/textViewId"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="1dp"
+            android:textColor="@android:color/transparent"
+            android:textSize="10dp"
+            android:onClick="deleteItem"
+            />
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>

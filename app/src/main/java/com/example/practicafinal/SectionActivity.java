@@ -156,6 +156,19 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
     public void addItemFromSection(View v){
         TextView textView = (TextView) v.findViewById(R.id.textViewId);
         String id = textView.getText().toString();
-        Toast.makeText(SectionActivity.this, id, Toast.LENGTH_LONG).show();
+
+        ContentValues gameValues = new ContentValues();
+        gameValues.put("SHOPPING_CART", 1);
+        try
+        {
+            SQLiteOpenHelper gameDbHelper = new GameDataHelper(this);
+            SQLiteDatabase db = gameDbHelper.getReadableDatabase();
+            db.update("GAMES",
+                    gameValues,
+                    "_id = ?",
+                    new String[]{id});
+            Toast.makeText(SectionActivity.this, "Añadido al carrito", Toast.LENGTH_LONG).show();
+        }
+        catch (Exception e) {}
     }
 }

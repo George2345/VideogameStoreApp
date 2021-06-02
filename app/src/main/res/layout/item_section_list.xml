@@ -46,7 +46,8 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp">
 
         <ImageButton
             android:id="@+id/imageButtonCart"
@@ -59,10 +60,11 @@
 
         <TextView
             android:id="@+id/textViewId"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:text="TextView"
-            android:visibility="visible"
+            android:text="1dp"
+            android:textColor="@android:color/transparent"
+            android:textSize="10dp"
             android:onClick="addItemFromSection"
             />
 
