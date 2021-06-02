@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -108,10 +109,19 @@ public class ShoppingCartActivity extends AppCompatActivity implements Navigatio
 
 
     public void finalizePurchase(View v){
-        Intent intent = new Intent(ShoppingCartActivity.this, FinalizarCompraActivity.class);
-        String precioTotal = ShoppingCartFragment.getPrecioTotal();
-        intent.putExtra("PRECIO_TOTAL", precioTotal);
-        startActivity(intent);
+        SQLiteOpenHelper gameDbHelper = new GameDataHelper(this);
+        SQLiteDatabase db = gameDbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery( " SELECT _id, NAME, PRICE FROM GAMES WHERE SHOPPING_CART=1", null);
+
+        if (cursor.getCount() == 0){
+            Toast.makeText(this, "No hay artículos!", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Intent intent = new Intent(ShoppingCartActivity.this, FinalizarCompraActivity.class);
+            String precioTotal = ShoppingCartFragment.getPrecioTotal();
+            intent.putExtra("PRECIO_TOTAL", precioTotal);
+            startActivity(intent);
+        }
     }
 
     //Metodo para el boton de eliminar un articulo de la lista
