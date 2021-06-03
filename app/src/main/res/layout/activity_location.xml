@@ -18,22 +18,32 @@
                 layout="@layout/toolbar_activity"
                 />
 
-            <fragment
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:id="@+id/map"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/text_kilometros"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="Cargando posición..."/>
+                <fragment
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="90"/>
 
+                <TextView
+                    android:id="@+id/text_kilometros"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="Cargando posición..."/>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
