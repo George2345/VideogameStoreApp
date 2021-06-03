@@ -3,12 +3,20 @@ package com.example.practicafinal;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -22,7 +30,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.navigation.NavigationView;
 
-public class LocationActivity extends AppCompatActivity implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
+public class LocationActivity extends AppCompatActivity implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener, LocationListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,24 +57,30 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+    }
 
+    @Override
+    public void onLocationChanged(Location location) {
+        TextView textView = (TextView) findViewById(R.id.text_kilometros);
         Location locationA = new Location("punto A");
 
         locationA.setLatitude(40.414821923253);
-        locationA.setLongitude(3.7033408687289855);
+        locationA.setLongitude(-3.7033408687289855);
 
         Location locationB = new Location("punto B");
 
-        locationB.setLatitude(40.52584190630449 );
-        locationB.setLongitude(-3.8874991045863876);
+        locationB.setLatitude(location.getLatitude());
+        locationB.setLongitude(location.getLongitude());
 
-        TextView textView = (TextView) findViewById(R.id.text_kilometros);
-        float distance = locationA.distanceTo(locationB);
+        float distance = locationB.distanceTo(locationA);
         distance /= 1000;
-        textView.setText("Estas a " + Float.toString(distance) + "km de tu tienda más cercana");
+        textView.setText("Estas a " + Float.toString(distance) + " km de tu tienda más cercana");
     }
 
     @Override

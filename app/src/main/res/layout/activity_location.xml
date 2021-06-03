@@ -32,7 +32,8 @@
                 android:textSize="20sp"
                 android:textAlignment="center"
                 android:gravity="center"
-                android:text="TextView"/>
+                android:text="Cargando posición..."/>
+
 
         </LinearLayout>
 
