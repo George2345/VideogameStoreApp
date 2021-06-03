@@ -44,23 +44,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        /*ListView listView = (ListView) findViewById(R.id.listViewtest);
-        ArrayList<String> testList = new ArrayList<>();
-        testList.add("marcos");
-        testList.add("maria");
-        testList.add("jose");
-        testList.add("marcos");
-        testList.add("maria");
-        testList.add("jose");
-        testList.add("marcos");
-        testList.add("maria");
-        testList.add("jose");
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, testList);
-        listView.setAdapter(adapter);*/
-
-
-
     }
 
     //Icono del menú lateral izquierdo
@@ -75,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         {
             super.onBackPressed();
         }
-
     }
 
     //Icono de la derecha carrito
@@ -141,5 +123,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

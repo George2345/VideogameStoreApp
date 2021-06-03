@@ -73,12 +73,12 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void onButtonShowPopupWindowClick(View view) {
 
-        // inflate the layout of the popup window
+        // Inflar el layout de la popup
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.popup_reclamacion, null);
 
-        // create the popup window
+        //Creacion de la popup window
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
         int height = LinearLayout.LayoutParams.WRAP_CONTENT;
         boolean focusable = true; // lets taps outside the popup also dismiss it
@@ -86,11 +86,8 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             popupWindow.setElevation(20);
         }
-        // show the popup window
-        // which view you pass in doesn't matter, it is only used for the window tolken
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
-        // dismiss the popup window when touched
         popupView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -144,7 +141,6 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
             m_imageView.setImageURI(videoUri);
             m_imageView.setVisibility(View.VISIBLE);
         }
-
     }
 
 
@@ -159,7 +155,6 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
         {
             super.onBackPressed();
         }
-
     }
 
     //Icono de la derecha send reclamacion
@@ -173,7 +168,6 @@ public class ReclamacionActivity extends AppCompatActivity implements Navigation
     @Override
     public boolean onOptionsItemSelected (MenuItem item)
     {
-
         switch (item.getItemId())
         {
             case R.id.sendReclamacion:

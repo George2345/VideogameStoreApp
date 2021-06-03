@@ -167,7 +167,7 @@ public class SectionActivity extends AppCompatActivity implements NavigationView
                     gameValues,
                     "_id = ?",
                     new String[]{id});
-            Toast.makeText(SectionActivity.this, "Añadido al carrito", Toast.LENGTH_LONG).show();
+            Toast.makeText(SectionActivity.this, "Añadido al carrito", Toast.LENGTH_SHORT).show();
         }
         catch (Exception e) {}
     }

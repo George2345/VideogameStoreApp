@@ -123,9 +123,7 @@ public class FinalizarCompraActivity extends AppCompatActivity implements Naviga
 
             intent.setType("text/plain");
             startActivity(Intent.createChooser(intent, "Elige cómo enviarlo: "));
-
         }
-
     }
 
 

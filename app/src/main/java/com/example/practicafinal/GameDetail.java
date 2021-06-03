@@ -27,6 +27,13 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
 
     int gameId;
 
+    TextView videogameName;
+    TextView videogamePrice;
+    TextView videogamePlatform;
+    TextView videogameReleaseDate;
+    TextView videogameCompany;
+    TextView videogameDescription;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +59,12 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
+        videogameName = (TextView) findViewById(R.id.videogameName);
+        videogamePrice = (TextView) findViewById(R.id.videogamePrice);
+        videogamePlatform = (TextView) findViewById(R.id.videogamePlatform);
+        videogameReleaseDate = (TextView) findViewById(R.id.videogameReleaseDate);
+        videogameCompany = (TextView) findViewById(R.id.videogameCompany);
+        videogameDescription = (TextView) findViewById(R.id.videogameDescription);
 
         gameId = Integer.valueOf(getIntent().getStringExtra("GAMEID"));
         SQLiteOpenHelper gameDbHelper = new GameDataHelper(this) ;
@@ -65,14 +77,13 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
                     null, null, null);
             cursor.moveToFirst();
             gameId = cursor.getInt(0);
-            ((TextView)findViewById(R.id.videogameName)).setText(cursor.getString(1));
+            videogameName.setText(cursor.getString(1));
             ((ImageView)findViewById(R.id.videogameImage)).setImageResource(cursor.getInt(2));
-            ((TextView)findViewById(R.id.videogamePrice)).setText(cursor.getString(3) + "€");
-            ((TextView)findViewById(R.id.videogamePlatform)).setText(cursor.getString(4));
-            ((TextView)findViewById(R.id.videogameReleaseDate)).setText(cursor.getString(5));
-            ((TextView)findViewById(R.id.videogameCompany)).setText(cursor.getString(6));
-            ((TextView)findViewById(R.id.videogameDescription)).setText(cursor.getString(7));
-
+            videogamePrice.setText(cursor.getString(3) + "€");
+            videogamePlatform.setText(cursor.getString(4));
+            videogameReleaseDate.setText(cursor.getString(5));
+            videogameCompany.setText(cursor.getString(6));
+            videogameDescription.setText(cursor.getString(7));
         }
         catch (Exception e){
         }
@@ -95,7 +106,7 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity, menu);
+        getMenuInflater().inflate(R.menu.menu_detalle, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -105,9 +116,18 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
         switch (item.getItemId())
         {
             case R.id.marketCart:
-                Intent intent = new Intent(this, ShoppingCartActivity.class);
-                startActivity(intent);
-                return true;
+                Intent intentCart = new Intent(this, ShoppingCartActivity.class);
+                startActivity(intentCart);
+                break;
+            case R.id.shareDetails:
+                String message = (String) "Nombre: " + videogameName.getText() + "\nPrecio: " + videogamePrice.getText() + "\nPlataforma: " + videogamePlatform.getText() +
+                        "\nFecha de lanzamiento: " + videogameReleaseDate.getText() + "\nDesarrollador: " + videogameCompany.getText() + "\nDescripción: " + videogameDescription.getText();
+                Intent intentShare = new Intent(Intent.ACTION_SEND);
+                intentShare.setType("text/plain");
+                intentShare.putExtra(Intent.EXTRA_SUBJECT, "Detalles de " + (String) videogameName.getText());
+                intentShare.putExtra(Intent.EXTRA_TEXT, message);
+                startActivity(Intent.createChooser(intentShare, "Compartir vía:"));
+                break;
         }
         return false;
     }
@@ -119,6 +139,8 @@ public class GameDetail extends AppCompatActivity implements NavigationView.OnNa
         switch (id)
         {
             case R.id.navigation_home:
+                Intent intentMain = new Intent(this, MainActivity.class);
+                startActivity(intentMain);
                 break;
             case R.id.navigation_novedades:
                 intent.putExtra("SECTION_ID", 0);

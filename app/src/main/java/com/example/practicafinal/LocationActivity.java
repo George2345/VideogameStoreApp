@@ -7,14 +7,18 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.navigation.NavigationView;
 
@@ -48,14 +52,35 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        Location locationA = new Location("punto A");
+
+        locationA.setLatitude(40.414821923253);
+        locationA.setLongitude(3.7033408687289855);
+
+        Location locationB = new Location("punto B");
+
+        locationB.setLatitude(40.52584190630449 );
+        locationB.setLongitude(-3.8874991045863876);
+
+        TextView textView = (TextView) findViewById(R.id.text_kilometros);
+        float distance = locationA.distanceTo(locationB);
+        distance /= 1000;
+        textView.setText("Estas a " + Float.toString(distance) + "km de tu tienda más cercana");
     }
 
     @Override
     public void onMapReady (GoogleMap googleMap){
         googleMap.addMarker(new MarkerOptions()
-            .position(new LatLng(0,0))
+            .position(new LatLng(40.414821923253, -3.7033408687289855))
             .title("Marker")
         );
+
+        LatLngBounds gamestopShop = new LatLngBounds(
+                new LatLng(40.414821923253, -3.7033408687289855), // SW bounds
+                new LatLng(40.414821923253, -3.7033408687289855)  // NE bounds
+        );
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(gamestopShop.getCenter(), 15));
     }
 
     //Icono del menú lateral izquierdo

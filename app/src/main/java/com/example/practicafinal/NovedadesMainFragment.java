@@ -53,7 +53,6 @@ public class NovedadesMainFragment extends ListFragment {
                 new int[] {R.id.textViewTituloMain, R.id.textViewPrecioMain},
                 0);
 
-
         setListAdapter(listAdapter);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_novedades_main, container, false);

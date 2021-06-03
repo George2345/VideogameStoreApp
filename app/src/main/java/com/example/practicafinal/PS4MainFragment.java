@@ -71,5 +71,4 @@ public class PS4MainFragment extends ListFragment {
         catch (Exception e) {
         }
     }
-
 }
